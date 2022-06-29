@@ -2,7 +2,7 @@
 clc,clear
 close all
 %declaring nodes, desired distance and other parameters
-n = 10;
+n = 50;
 dim = 2;
 d = 15;
 k = 1.2;

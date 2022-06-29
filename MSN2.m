@@ -2,7 +2,7 @@
 clc,clear
 close all
 %declaring nodes, desired distance and other parameters
-n = 100;
+n = 40;
 dim = 2;
 d = 15;
 k = 1.2;
@@ -41,7 +41,7 @@ rk_iter = zeros(length(t),1);
 
 %Loop for movement of the flock
 for iter = 1:length(t)
-    p_nodes(:,1) = (x - old_x)/delta_t; %Calculating velocity of the nodés
+    p_nodes(:,1) = (x - old_x)/delta_t; %Calculating velocity of the nodï¿½s
     p_nodes(:,2) = (y - old_y)/delta_t;
     if (iter > 1)
       p_iter(iter,:) = ((p_nodes(:,1).^2) + (p_nodes(:,2).^2)); %Saving node velocity values for each iteration  

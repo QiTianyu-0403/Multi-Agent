@@ -2,7 +2,7 @@
 clc,clear
 close all
 %declaring nodes, desired distance and other parameters
-n = 100;
+n = 40;
 dim = 2;
 d = 15;
 k = 1.2;
@@ -47,7 +47,7 @@ rk_iter = zeros(length(t),1);
 for iter = 1:length(t)
     old_qtarg = qtarg;
     [qtarg] = sinew(qtarg,t,iter); %To make the target move in a sinewave trajectory
-    p_nodes(:,1) = (x - old_x)/delta_t; %Calculating velocity of the nodés
+    p_nodes(:,1) = (x - old_x)/delta_t; %Calculating velocity of the nodï¿½s
     p_nodes(:,2) = (y - old_y)/delta_t;       
     old_x = x; %Saving old x and y values for the purpose of calculating velocity
     old_y = y;
