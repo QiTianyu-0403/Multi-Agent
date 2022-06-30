@@ -81,24 +81,24 @@ end
 
 %Plotting the connectivity
 figure(3)
-plot(n_iter,rk_iter);
+plot(n_iter,rk_iter,'Color',[238/255 121/255 66/255],'LineWidth',2);
 
 %Plotting the trajectory
 figure(4)
 for i = 1:length(t)
  if(i == length(t))
-   plot(x_iter(:,i),y_iter(:,i),'m>');
+   plot(x_iter(:,i),y_iter(:,i),'kp','Color',[215/255 99/255 100/255],'MarkerSize',10,'LineWidth',1.5);
  else  
-   plot(x_iter(:,i),y_iter(:,i),'k.');
+   plot(x_iter(:,i),y_iter(:,i),'k.','Color',[190/255 190/255 190/255]);
  end
  hold on;
 end 
 
 %Plotting the Center Of Mass and Target trajectory
-figure(5)
-plot(com_iter(:,1),com_iter(:,2),'y.');
-hold on;
-plot(qtarg_iter(:,1),qtarg_iter(:,2),'k.');
-hold on;
+% figure(5)
+% plot(com_iter(:,1),com_iter(:,2),'y.');
+% hold on;
+% plot(qtarg_iter(:,1),qtarg_iter(:,2),'k.');
+% hold on;
 
 

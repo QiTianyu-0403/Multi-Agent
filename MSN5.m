@@ -2,7 +2,7 @@
 clc,clear
 close all
 %declaring nodes, desired distance and other parameters
-n = 20;
+n = 40;
 dim = 2;
 d = 10;
 k = 1.2;
@@ -11,8 +11,8 @@ h = 0.2;
 %Values for calculating distance from obstacle
 d_ = k * d;
 r_ = 0.75 * d_;
-Kr = 15;
-yk = [160,25];
+Kr = 2;
+yk = [25,80];
 neigh = {};
 %Optional paramters
 epsilon = 0.1; 
@@ -27,7 +27,7 @@ c2beta = 2 * sqrt(c1beta);
 %Randomely generating the points
 x = rand(n,1).*50;
 y = rand(n,1).*50;
-qtarg(:) = [300,25]; %Position of the target
+qtarg(:) = [25,120]; %Position of the target
 [x,y,neigh] = compute(x,y,r,n,neigh); %Computing neighbors of nodes
 plotgraphtargobs(x,y,neigh,n,qtarg, yk, Kr); %plotting the nodes and the target and connecting the nodes
 
@@ -91,23 +91,23 @@ end
 
 %Plotting the connectivity
 figure(3)
-plot(n_iter,rk_iter);
+plot(n_iter,rk_iter,'Color',[238/255 121/255 66/255],'LineWidth',2);
 
 %Plotting the trajectory
 figure(4)
 for i = 1:length(t)
  if(i == length(t))
-   plot(x_iter(:,i),y_iter(:,i),'m>');
+   plot(x_iter(:,i),y_iter(:,i),'kp','Color',[215/255 99/255 100/255],'MarkerSize',10,'LineWidth',1.5);
  else  
-   plot(x_iter(:,i),y_iter(:,i),'k.');
+   plot(x_iter(:,i),y_iter(:,i),'k.','Color',[190/255 190/255 190/255]);
  end
  hold on;
 end 
 
 %Plotting the Center of Mass trajectory
-figure(5)
-plot(com_iter(:,1),com_iter(:,2),'y.');
-hold on;
-plot(qtarg(1),qtarg(2),'k.');
-hold on;
+% figure(5)
+% plot(com_iter(:,1),com_iter(:,2),'y.');
+% hold on;
+% plot(qtarg(1),qtarg(2),'k.');
+% hold on;
 
