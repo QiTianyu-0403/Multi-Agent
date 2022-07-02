@@ -2,12 +2,6 @@ function plotgraphtarg(x,y,neigh,n,qtarg)
   plot(x,y,'kp','Color',[215/255 99/255 100/255],'MarkerSize',10,'LineWidth',1.5);
   grid on
   hold on;
-  %phi = 0:.1:2*pi;
-  %u = Kr * cos(phi);
-  %v = Kr * sin(phi);
-  %plot(u + yk(1),v + yk(2),'r');%,x,y,'m>')  
-  %fill(u + yk(1),v + yk(2),'r')
-  %hold on;
   plot(qtarg(1),qtarg(2),'cx','MarkerSize',20,'Color',[100/255 149/255 237/255],'LineWidth',2);
   hold on;
   for i = 1:n    
